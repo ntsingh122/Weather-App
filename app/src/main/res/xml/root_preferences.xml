@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="tempUnit"
+            android:summaryOff="Switch on this option for setting default Unit F"
+            android:summaryOn="Switch Off for C"
+            android:title="Settings option" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

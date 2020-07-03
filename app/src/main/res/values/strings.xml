@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Anb</string>
+    <string name="title_activity_display">DisplayActivity</string>
+    <string name="tab_text_1">Current</string>
+    <string name="tab_text_2">Maps</string>
+    <string name="tab_text_3">Report</string>
+    <string name="tab_text_4">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="sync_header">Choose Default Unit</string>
+
+</resources>
