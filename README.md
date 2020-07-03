@@ -1,4 +1,4 @@
-# Weather app
+# Weather app Java
 A Weather app which uses openWeatherMaps api and Google Maps api.  
  It uses Pojo classes to retrieve data from json.
  
