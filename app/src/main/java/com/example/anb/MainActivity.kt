@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -25,20 +26,15 @@ import com.google.android.gms.location.LocationServices
      */
 class MainActivity : AppCompatActivity() {
     private var permissions = arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION)
-    private var button: Button? = null
     private var fusedLocationClient: FusedLocationProviderClient? = null
-    private var editText: EditText? = null
     private var mLocationManager: LocationManager? = null
     private val myRequestCode = 1
+    private val  SPLASH_TIME = 1000L
 
     //Typeface weatherFont;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar!!.hide()
         setContentView(R.layout.activity_main)
-        button = findViewById(R.id.button)
-        editText = findViewById(R.id.editTextTextPersonName)
-        button!!.isEnabled = false
         mLocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
 //        mLocationManager.requestLocationUpdatesdates(LocationManager.GPS_PROVIDER, 5000, 10, (LocationListener) this);
@@ -48,16 +44,24 @@ class MainActivity : AppCompatActivity() {
         } else {
             fetchGps()
         }
-        button!!.isEnabled = true
-        button!!.setOnClickListener {
-            if (editText!!.text != null) {
+
                 val sharedPref = getSharedPreferences("username", Context.MODE_PRIVATE)
                 val editor = sharedPref.edit()
-                editor.putString("username", editText!!.text.toString())
+                editor.putString("username", "Nitin")
                 editor.apply()
-                startActivity(Intent(this@MainActivity, DisplayActivity::class.java))
-            } else Toast.makeText(this@MainActivity, "Please Input username first", Toast.LENGTH_SHORT).show()
-        }
+                startIt()
+
+              //Toast.makeText(this@MainActivity, "Please Input username first", Toast.LENGTH_SHORT).show()
+
+    }
+
+    private fun startIt() {
+        Handler().postDelayed(
+                {
+                    val i = Intent(this@MainActivity, DisplayActivity::class.java)
+                    startActivity(i)
+                    finish()
+                }, SPLASH_TIME)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {

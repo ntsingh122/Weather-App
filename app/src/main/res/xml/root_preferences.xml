@@ -10,7 +10,9 @@
             android:key="tempUnit"
             android:summaryOff="Switch on this option for setting default Unit F"
             android:summaryOn="Switch Off for C"
-            android:title="Settings option" />
+            android:title="Settings option"
+            android:icon="@drawable/ic_temp_24"
+            />
 
     </PreferenceCategory>
 
