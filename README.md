@@ -11,3 +11,5 @@ A Weather app which uses openWeatherMaps api and Google Maps api.
     
  ## Android Studio Version
     4.0
+ ## Demo
+    ![](/master/app/ezgif.com-optimize%20(1).gif)
